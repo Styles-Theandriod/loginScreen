@@ -98,20 +98,20 @@ const styles = StyleSheet.create({
         padding:20,
         marginTop:200,
         borderRadius:10,
-        ...Platform.select({
-            ios:{
-                shadowColor:'#000000',
-                shadowOpacity:0.3,
-                shadowRadius:10,
-                shadowOffset:{width:0, height: 2}
-            },
-            android:{
-                shadowColor:'lightgreen',
-                shadowOpacity:0.3,
-                shadowRadius:10,
-                shadowOffset:{width:0, height: 2} 
-            }
-        }),
+        // ...Platform.select({
+        //     ios:{
+        //         shadowColor:'#000000',
+        //         shadowOpacity:0.3,
+        //         shadowRadius:10,
+        //         shadowOffset:{width:0, height: 2}
+        //     },
+        //     android:{
+        //         shadowColor:'lightgreen',
+        //         shadowOpacity:0.3,
+        //         shadowRadius:10,
+        //         shadowOffset:{width:0, height: 2} 
+        //     }
+        // }),
     },
     
     btnPrimary:{
