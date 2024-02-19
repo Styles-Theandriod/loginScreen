@@ -1,20 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './assets/components/LoginScreen';
-import Pinch from './assets/components/Pinch';
+import HomeScreen from './assets/components/HomeScreen';
+import ProfileScreen from './assets/components/ProfileScreen';
 
-import 'react-native-gesture-handler';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
+import Drawer from './assets/components/Drawer';
 
+
+//Create a Tab Naviagtor 
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const imageURL = 'https://picsum.photos/200/300';
+
   return (
-    <GestureHandlerRootView style={styles.container}>
-     <LoginScreen/>
-     <Pinch imageSource={imageURL}/>
-    </GestureHandlerRootView>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name='HomeScreen' component={HomeScreen} options={{
+          tabBarIcon: ({color, size}) => {
+            <Ionicons name="home-outline" size={size} color={color} />
+          }
+        }}/>
+        <Tab.Screen name='ProfileScreen' component={ProfileScreen} options={{
+          tabBarIcon: ({color, size}) => {
+            <Ionicons name="person-outline" size={size} color={color} />
+          }
+        }}/>
+      </Tab.Navigator>
+
+      <Drawer/>
+    </NavigationContainer>
   );
 }
 
